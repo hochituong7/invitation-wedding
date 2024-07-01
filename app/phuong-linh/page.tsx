@@ -13,27 +13,26 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       // Global settings:
-       once: false, // whether animation should happen only once - while scrolling down
+      once: false, // whether animation should happen only once - while scrolling down
       // You can also add other settings here as per your requirement
-
     })
   }, [])
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<any>(null);
+  const [isPlaying, setIsPlaying] = useState(false)
+  const audioRef = useRef<any>(null)
 
   const togglePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.pause();
+        audioRef.current.pause()
       } else {
-        audioRef.current.play();
+        audioRef.current.play()
       }
-      setIsPlaying(!isPlaying);
+      setIsPlaying(!isPlaying)
     }
-  };
+  }
   return (
     <>
-      <main className="bg-white text-black "  onClick={togglePlayPause} >
+      <main className="bg-white text-black " onClick={togglePlayPause}>
         <section>
           <div className="bg-[#BB8374] w-full h-[20vw] absolute z-1"></div>
           <div className="flex flex-col items-center justify-center lg:p-10 p-4 z-10 relative">
@@ -312,8 +311,23 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <div className="bg-[#BB8374] w-full h-[200px] flex justify-center items-center">
+        <section className="mt-10">
+          <div className="flex justify-center text-center">
+            Quét mã hoặc click vào đây để xem đường đi nhé !
+          </div>
+          <div className="px-10 flex justify-center">
+            <a href="https://maps.app.goo.gl/qwshhj3VzMuKzC2e8?g_st=iz">
+              <img
+              data-aos="fade-up"
+                src="/assets/wedding/qrcode_maps.png"
+                alt="QRcode Maps"
+                className=" w-full h-full lg:w-64 lg:h-64 object-cover animate-fadeIn cursor-pointer"
+              />
+            </a>
+          </div>
+        </section>
+        <section className="mt-10">
+          <div className="bg-[#BB8374] w-full h-[200px] flex justify-center items-center pb-10">
             <div className="flex-col text-white font-bold text-lg lg:text-2xl text-center px-2">
               <p className="flex justify-center">
                 Sự hiện diện của bạn là lời chúc phúc, niềm vinh dự của gia đình
@@ -325,25 +339,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="fixed bottom-0 right-4 mb-4 ml-4 w-28 h-28 bg-transparent z-20">
+        <div className="fixed bottom-0 right-4 mb-4 ml-4 w-16 h-16 lg:w-28 lg:h-28 bg-transparent z-20">
           <div className="flex">
             <img
               src="/assets/wedding/music_player.png"
               alt="Music Disk"
-              className="disk-animation w-full h-full object-cover animate-rotateContinuous"
+              className="disk-animation w-full h-full object-cover animate-rotateContinuous cursor-pointer"
             />
-            <div className="fixed bottom-0 right-4 mb-4 ml-4 w-28 h-28 bg-transparent z-20">
-              <div className="flex">
-                <img
-                  src="/assets/wedding/music_player.png"
-                  alt="Music Disk"
-                  className="disk-animation w-full h-full object-cover animate-rotateContinuous"
-                />
-                <audio ref={audioRef} preload="none">
-                  <source src="/assets/wedding/xdct.mp3" type="audio/mp3" />
-                </audio>
-              </div>
-            </div>
+            <audio ref={audioRef} preload="none">
+              <source src="/assets/wedding/xdct.mp3" type="audio/mp3" />
+            </audio>
           </div>
         </div>
       </main>
