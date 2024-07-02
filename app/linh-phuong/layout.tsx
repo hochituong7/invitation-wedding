@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hoài Phương & Mỹ Linh's Wedding",
-  description: "Hôn lễ sẽ diễn ra vào ngày 03/08/2024. Hãy đến nâng ly chúc mừng chúng tôi.",
+  description: "Hôn lễ sẽ diễn ra vào ngày 02/08/2024. Hãy đến nâng ly chúc mừng chúng tôi.",
 };
 
 export default function ChildLayout({
